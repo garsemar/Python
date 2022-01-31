@@ -1,11 +1,16 @@
 from multiprocessing import Process, cpu_count
 import time
+from os import system
 
 
 def counter(num):
     count = 0
+    nom = 1
     while count < num:
         count += 1
+        system(f'cd /home/sjo/Escriptori && echo '
+               f'"holaawdaowkdapowdapwjdawkjdlkawjdlkawlkdjawlkdjawlkdjlakwjdalwkdjalkwjd" > hola{nom}.txt')
+        nom += 1
 
 
 def main():
