@@ -1,2 +1,2 @@
-# Curso Python con Nate
-### El repositorio del curso
+# Python
+[garsemar](https://www.garsemar.com)
