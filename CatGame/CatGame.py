@@ -3,7 +3,7 @@ match = ['E', master, 'S', 'I', 'R', 'T', 'M']
 isV = True
 out = []
 
-f = open("/home/garsemar/PycharmProjects/Python/CatGame/cat.dic", "r")
+f = open("cat2.dic", "r")
 for line in f:
     line = line[:len(line) - 1]
     line = line.upper()
