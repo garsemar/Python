@@ -58,7 +58,7 @@ def checkInput(secWord):
         elif val:
             break
         wrd.close()
-
+    cls()
     word = word.lower()
     addMenu(word)
     curr = Wordle.menu[Wordle.currLine]
@@ -102,7 +102,6 @@ def main():
     if Wordle.currLine == 6:
         print("You lose, you have exceeded the maximum attempts.")
         return
-
     checkInput(secWord)
 
 
