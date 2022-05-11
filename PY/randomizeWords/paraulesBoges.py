@@ -1,10 +1,18 @@
-import os
+"""
+David Baghdasaryan
+Yi Luen
+ASIXcA
+11/05/2022
+R3: PT1_paraulesBoges
+"""
 
-from randomize import *
+import os
+import pathlib
+from randomize_word import *
 
 
 def getWordsFromFile():
-    # Path de la carpeta con los archivos a canviar
+    # Path de la carpeta con los archivos
     pathIn = "entrada/"
     pathOut = "sortida/"
     listLines = []
@@ -21,10 +29,10 @@ def getWordsFromFile():
         except:
             listLines = []
         sort = pathOut + i
-        with open(sort, "w") as myfile:
+        with open(str(pathlib.Path(sort).with_suffix('')) + ' Boges.txt', "w", encoding='utf-8') as myfile:
             myfile.write("")
         for j in listLines:
-            with open(sort, "a") as myfile:
+            with open(str(pathlib.Path(sort).with_suffix('')) + ' Boges.txt', "a", encoding='utf-8') as myfile:
                 myfile.write(j + '\n')
         listLines = []
 
